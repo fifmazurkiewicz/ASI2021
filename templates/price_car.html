@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+
+<body>
+{% if session.get('logged_in')==True %}
+<div id="auta">
+    <div class="control-group">
+        <a target="_blank"
+           href="https://www.otomoto.pl/osobowe/peugeot/307-cc/?search%5Border%5D=created_at%3Adesc&search%5Bbrand_program_id%5D%5B0%5D=&search%5Bcountry%5D=">Otomoto
+            example </a>
+        <div class="col-sm-12">
+            <div id="example">Full example : 2005 350000 155 1997 3 Used Peugeot 307 Front wheels Manual convertible
+            </div>
+
+            <div id="result">Expected prize of provided car: {{ result }}
+            </div>
+        </div>
+        <div class="row">
+            <form action="/predict">
+                <input name="Production_year" placeholder="Production_year" aria-label="Production_year" value=""/>
+                <div class="col-sm-4">
+                    <div id="Production_year">Example: 2000</div>
+                </div>
+                <input name="Mileage_km" placeholder="Mileage_km" aria-label="Mileage_km" value=""/>
+                <div class="col-sm-4">
+                    <div id="Mileage_km">Example: 350000</div>
+                </div>
+                <input name="Power_HP" placeholder="Power_HP" aria-label="Power_HP" value=""/>
+                <div class="col-sm-4">
+                    <div id="Power_HP">Example: 184</div>
+                </div>
+                <input name="Displacement_cm3" placeholder="Displacement_cm3" aria-label="Displacement_cm3" value=""/>
+                <div class="col-sm-4">
+                    <div id="Displacement_cm3">Example: 1800</div>
+                </div>
+                <input name="Doors_number" placeholder="Doors_number" aria-label="Doors_number" value=""/>
+                <div class="col-sm-4">
+                    <div id="Doors_number">Example: 4</div>
+                </div>
+                <input name="Condition" placeholder="Condition" aria-label="Condition" value=""/>
+                <div class="col-sm-4">
+                    <div id="Condition">Example: New, Used</div>
+                </div>
+                <input name="Vehicle_brand" placeholder="Vehicle_brand" aria-label="Vehicle_brand" value=""/>
+                <div class="col-sm-4">
+                    <div id="Vehicle_brand">Example: BMW, Škoda, Audi</div>
+                </div>
+                <input name="Vehicle_model" placeholder="Vehicle_model" aria-label="Vehicle_model" value=""/>
+                <div class="col-sm-4">
+                    <div id="Vehicle_model">Example: i3, Yaris</div>
+                </div>
+                <input name="Drive" placeholder="Drive" aria-label="Drive" value=""/>
+                <div class="col-sm-4">
+                    <div id="Drive">Example: Front wheels, Rear wheels, 4x4 (permanent), 4x4 (attached automatically)
+                    </div>
+                </div>
+                <input name="Transmission" placeholder="Transmission" aria-label="Transmission" value=""/>
+                <div class="col-sm-4">
+                    <div id="Transmission">Example: Automatic, Manual</div>
+                </div>
+                <input name="Type" placeholder="Type" aria-label="Type" value=""/>
+                <div class="col-sm-4">
+                    <div id="Type">Example: SUV, station_wagon, sedan, compact, city_cars, minivan, coupe, small_cars,
+                        convertible
+                    </div>
+                </div>
+
+                <input type="submit" value="Check" class="btn btn-primary btn-sm">
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+{% endif %}
+</body>
+
+
+</html>
+{% endblock %}}

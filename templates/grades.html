@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+<!--<link rel="stylesheet" href="/static/style.css" type="text/css">-->
+
+<body>
+<form action="/addgrade">
+    <input type="submit" value="addgrade" class="btn btn-primary btn-sm">
+</form>
+{% if session.get('logged_in')==True %}
+<table class="table table-sm">
+    <tr class="table-primary">
+        <td> Student Id</td>
+        <td> Grade</td>
+        <td> Date</td>
+    </tr>
+    {% for item in grades %}
+    <TR class="graderow">
+        <TD class="c1">{{item.student_id}}</TD>
+        <TD class="c2">{{item.grade}}</TD>
+        <TD class="c3">{{item.grade_date}}</TD>
+    </TR>
+    {% endfor %}
+    {% endif %}
+    {% endblock %}}
+</table>
+
+</body>
+
+</html>
