@@ -56,11 +56,6 @@ def predict_prize():
         return render_template('price_car.html')
 
 
-@app.route('/test_bootstrap')
-def testujemy_base():
-    return render_template('base_front.html', title='ASI2021')
-
-
 @app.route('/')
 def home():
     if not session.get('logged_in'):
