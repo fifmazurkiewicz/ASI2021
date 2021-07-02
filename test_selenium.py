@@ -6,6 +6,7 @@ username, password = "testuser", "test1234"
 driver = webdriver.Chrome("chromedriver.exe")
 own_site_url = "http://127.0.0.1:5000/"
 
+# own_site_url = "https://ZadanieASI.filipmazurkiewi.repl.co"
 
 def register_user():
     nasz_url = own_site_url + '/signup'
